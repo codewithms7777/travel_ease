@@ -1,8 +1,13 @@
 # Use PHP 8.2 with Apache
 FROM php:8.2-apache
 
-# Install MySQL extensions
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+# Disable conflicting MPMs
+RUN a2dismod mpm_event mpm_worker || true \
+    && a2enmod mpm_prefork
+
+# Install MySQL extensions and enable them
+RUN docker-php-ext-install mysqli pdo pdo_mysql \
+    && docker-php-ext-enable mysqli pdo pdo_mysql
 
 # Copy your project files
 COPY . /var/www/html/
