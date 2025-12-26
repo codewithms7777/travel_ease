@@ -1,9 +1,11 @@
+
+
 <?php
-$host = "turntable.proxy.rlwy.net";
-$port = 28258; // ← USE YOUR ACTUAL PORT FROM RAILWAY
-$user = "root";
-$pass = "woHJszezOFVPCwnqdmzQMFeLJTfzImqE";
-$dbname = "railway";
+$host = getenv('MYSQLHOST');
+$port = getenv('MYSQLPORT');
+$user = getenv('MYSQLUSER');
+$pass = getenv('MYSQLPASSWORD');
+$dbname = getenv('MYSQLDATABASE');
 
 $conn = mysqli_connect($host, $user, $pass, $dbname, $port);
 
