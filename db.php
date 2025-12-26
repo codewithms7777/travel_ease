@@ -1,15 +1,13 @@
-
-
-
 <?php
-try {
-    $conn = new PDO(
-        "mysql:host=".$_ENV['MYSQLHOST'].";port=".$_ENV['MYSQLPORT'].";dbname=".$_ENV['MYSQLDATABASE'],
-        $_ENV['MYSQLUSER'],
-        $_ENV['MYSQLPASSWORD']
-    );
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("DB Connection failed: " . $e->getMessage());
+$host = "turntable.proxy.rlwy.net";
+$port = 28258; // ← USE YOUR ACTUAL PORT FROM RAILWAY
+$user = "root";
+$pass = "woHJszezOFVPCwnqdmzQMFeLJTfzImqE";
+$dbname = "railway";
+
+$conn = mysqli_connect($host, $user, $pass, $dbname, $port);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 ?>
