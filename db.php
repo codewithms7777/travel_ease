@@ -1,6 +1,6 @@
 <?php
 $host = "turntable.proxy.rlwy.net";
-$port = 6543; // ← USE YOUR ACTUAL PORT FROM RAILWAY
+$port = 28258; // ← USE YOUR ACTUAL PORT FROM RAILWAY
 $user = "root";
 $pass = "woHJszezOFVPCwnqdmzQMFeLJTfzImqE";
 $dbname = "railway";
