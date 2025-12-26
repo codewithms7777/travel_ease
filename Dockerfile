@@ -12,3 +12,6 @@ COPY . .
 
 # FrankenPHP listens on port 80 by default, Railway will map this
 EXPOSE 80
+
+# This forces FrankenPHP to run on port 80 without SSL
+CMD ["frankenphp", "php-server", "--listen", ":80"]
