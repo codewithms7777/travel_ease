@@ -73,7 +73,7 @@ session_start();
     <!-- Hero Section -->
     <section class="hero">
     <video autoplay muted loop playsinline class="hero-video">
-        <source src="trip.mp4" type="video/mp4">
+        <source src="https://github.com/codewithms7777/travel_ease/trip.mp4" type="video/mp4">
     </video>
 
     <!-- Dark Overlay -->
