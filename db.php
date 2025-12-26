@@ -1,13 +1,12 @@
 <?php
-$host = "mysql.railway.internal";
-$user = "root";     // default for XAMPP
-$pass = "woHJszezOFVPCwnqdmzQMFeLJTfzImqE";         // default empty
+$host = "turntable.proxy.rlwy.net";
+$port = 6543; // ← USE YOUR ACTUAL PORT FROM RAILWAY
+$user = "root";
+$pass = "woHJszezOFVPCwnqdmzQMFeLJTfzImqE";
 $dbname = "railway";
 
-// Create connection
-$conn = mysqli_connect($host, $user, $pass, $dbname);
+$conn = mysqli_connect($host, $user, $pass, $dbname, $port);
 
-// Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
