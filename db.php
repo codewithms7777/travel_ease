@@ -1,8 +1,8 @@
 <?php
-$host = "localhost";
+$host = "mysql.railway.internal";
 $user = "root";     // default for XAMPP
-$pass = "";         // default empty
-$dbname = "travelease";
+$pass = "woHJszezOFVPCwnqdmzQMFeLJTfzImqE";         // default empty
+$dbname = "railway";
 
 // Create connection
 $conn = mysqli_connect($host, $user, $pass, $dbname);
