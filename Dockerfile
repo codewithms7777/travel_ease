@@ -1,20 +1,19 @@
-# Use official PHP 8.2 with Apache
 FROM php:8.2-apache
 
-# Install PHP MySQL extensions
+# Install MySQL extensions
 RUN docker-php-ext-install mysqli pdo pdo_mysql \
     && docker-php-ext-enable mysqli pdo pdo_mysql
 
-
-# Copy project files
+# Copy project
 COPY . /var/www/html/
 
-# Set permissions for Apache
+# Set permissions
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
-# Ensure Apache runs in foreground
-CMD ["apache2-foreground"]
+# Make sure index.php exists
+RUN test -f /var/www/html/index.php || echo "<?php echo 'Index missing'; ?>" > /var/www/html/index.php
 
-# Expose HTTP port
+# Expose port and run Apache
 EXPOSE 80
+CMD ["apache2-foreground"]
