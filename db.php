@@ -1,5 +1,3 @@
-
-
 <?php
 $host = getenv('MYSQLHOST');
 $port = getenv('MYSQLPORT');
